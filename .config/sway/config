@@ -191,14 +191,6 @@ bar {
 include /etc/sway/config.d/*
 
 #
-# Startup:
-#
-exec_always {
-    xsettingsd
-    wlsunset -l 45.0 -L -10.0
-}
-
-#
 # Misc.:
 #
 default_border none
@@ -216,6 +208,9 @@ bindsym Print exec --no-startup-id slurp | grim -g - $(xdg-user-dir PICTURES)/$(
 # Lock screen
 bindsym $mod+l exec swaylock
 
+# Open emoji picker
+bindsym $mod+period exec /home/ruir/.config/sway/scripts/wofi-emoji 
+
 # Audio controls
 bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
 bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
@@ -228,4 +223,12 @@ bindsym XF86AudioPrev exec playerctl previous
 # Open as floating
 for_window {
     [app_id="gnome-control-center"] floating enable
+}
+
+#
+# Startup:
+#
+exec {
+    xsettingsd
+    wlsunset -l 45.0 -L -10.0
 }
