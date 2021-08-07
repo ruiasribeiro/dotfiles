@@ -231,4 +231,5 @@ for_window {
 exec {
     xsettingsd
     wlsunset -l 45.0 -L -10.0
+    blueman-applet
 }
