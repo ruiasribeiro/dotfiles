@@ -12,7 +12,7 @@
     //     "sway/window"
     // ],
     "modules-right": [
-        "keyboard-state",
+        // "keyboard-state",
         "pulseaudio",
         "network",
         "backlight",
