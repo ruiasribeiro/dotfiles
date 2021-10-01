@@ -1,21 +1,21 @@
 {
     // "layer": "top", // Waybar at top layer
     "position": "top", // Waybar position (top|bottom|left|right)
-    "height": 24, // Waybar height (to be removed for auto height)
+    //"height": 24, // Waybar height (to be removed for auto height)
     "margin": 5,
     // "width": 1280, // Waybar width
     "modules-left": [
         "sway/workspaces",
         "sway/mode"
     ],
-    "modules-center": [
-        "sway/window"
-    ],
+    // "modules-center": [
+    //     "sway/window"
+    // ],
     "modules-right": [
+        "keyboard-state",
         "pulseaudio",
         "network",
         "backlight",
-        "keyboard-state",
         "battery",
         "clock",
         "tray",
@@ -48,6 +48,9 @@
     },
     "sway/mode": {
         "format": "<span style=\"italic\">{}</span>"
+    },
+    "sway/window": {
+        "max-length": 50
     },
     "tray": {
         // "icon-size": 21,
