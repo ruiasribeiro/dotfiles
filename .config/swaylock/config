@@ -1,4 +1,4 @@
-font=Inter
-image=/home/ruir/Pictures/Wallpapers/catfish.jpg
+font=Cantarell
+image=$(cat ~/.cache/wal/wal)
 
 indicator-idle-visible
