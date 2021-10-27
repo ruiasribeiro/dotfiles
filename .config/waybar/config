@@ -2,7 +2,7 @@
     // "layer": "top", // Waybar at top layer
     "position": "top", // Waybar position (top|bottom|left|right)
     //"height": 24, // Waybar height (to be removed for auto height)
-    "margin": 5,
+    "margin": 0,
     // "width": 1280, // Waybar width
     "modules-left": [
         "sway/workspaces",
@@ -18,8 +18,8 @@
         "backlight",
         "battery",
         "clock",
-        "tray",
-        "custom/power"
+        "tray"
+        // "custom/power"
     ],
     // Modules configuration
     // "sway/workspaces": {
@@ -58,6 +58,7 @@
     },
     "clock": {
         // "timezone": "America/New_York",
+        "format": "{:%H:%M}  ",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "format-alt": "{:%Y-%m-%d}"
     },

@@ -2,6 +2,9 @@
 #
 # Read `man 5 sway` for a complete reference.
 
+# Include colors from pywal.
+include "$HOME/.cache/wal/colors-sway"
+
 # Logo key. Use Mod1 for Alt.
 set $mod Mod4
 
@@ -21,7 +24,7 @@ for_window [app_id="^launcher$"] floating enable, sticky enable, resize set 30 p
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg /home/ruir/Pictures/Wallpapers/catfish.jpg fill
+output * bg $wallpaper fill
 #
 # Example configuration:
 #
@@ -236,7 +239,7 @@ exec {
 }
 
 # Change border colors
-client.focused #4c7899 #285577 #ffffff #285577 #285577
+client.focused $color0 $color7 $foreground $color7 $color7
 
 # Disable borders when there is only one open window
 hide_edge_borders smart_no_gaps
