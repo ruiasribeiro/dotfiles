@@ -35,4 +35,4 @@ stack_duplicates = false
 
 [frame]
 color = "#636363"
-width = 3
+width = 2

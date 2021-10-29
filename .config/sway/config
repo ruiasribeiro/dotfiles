@@ -19,7 +19,7 @@ set $term alacritty
 
 # Application launcher
 set $menu $term --class=launcher -e /home/ruir/.config/sway/scripts/sway-launcher-desktop
-for_window [app_id="^launcher$"] floating enable, sticky enable, resize set 30 ppt 60 ppt, border pixel 3
+for_window [app_id="^launcher$"] floating enable, sticky enable, resize set 30 ppt 60 ppt
 
 ### Output configuration
 #
@@ -196,8 +196,9 @@ include /etc/sway/config.d/*
 #
 # Misc.:
 #
-default_border pixel 3
-font SF Pro Display
+default_border pixel 2
+font SF Pro Display 10
+titlebar_border_thickness 0
 gaps inner 5
 smart_gaps on
 
@@ -239,7 +240,7 @@ exec {
 }
 
 # Change border colors
-client.focused $color0 $color7 $foreground $color7 $color7
+client.focused $color0 $color7 $background $color7 $color7
 
 # Disable borders when there is only one open window
 hide_edge_borders smart_no_gaps
