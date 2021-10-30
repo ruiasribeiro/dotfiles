@@ -196,7 +196,7 @@ include /etc/sway/config.d/*
 #
 # Misc.:
 #
-default_border pixel 2
+default_border pixel 1
 font SF Pro Display 10
 titlebar_border_thickness 0
 gaps inner 5
