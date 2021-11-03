@@ -240,7 +240,8 @@ exec {
 }
 
 # Change border colors
-client.focused $color0 $color7 $background $color7 $color7
+# border background text indicator child_border
+client.focused $color1 $color1 $background $color1 $color1
 
 # Disable borders when there is only one open window
 hide_edge_borders smart_no_gaps

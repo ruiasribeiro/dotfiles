@@ -16,9 +16,10 @@ foreground = "#FF1744"
 background = "#212121"
 timeout = 5
 
-
 [global]
-geometry = "500x5-15+15"
+width = 400
+height = 100
+offset = 15x15
 font = "Cantarell" 
 transparency = 10 
 padding = 5
