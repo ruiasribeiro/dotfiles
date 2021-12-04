@@ -2,8 +2,9 @@
     border: none;
     border-radius: 0;
     /* `otf-font-awesome` is required to be installed for icons */
-    font-family: Cantarell, Roboto, Helvetica, Arial, "Font Awesome 5 Free";
-    font-size: 13px;
+    font-family: Iosevka Aile, Roboto, Helvetica, Arial, "Font Awesome 5 Free";
+    font-size: 12px;
+    /* font-weight: bold; */
     min-height: 28px;
 }
 

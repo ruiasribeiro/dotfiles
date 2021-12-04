@@ -1,13 +1,13 @@
 font:
   normal:
-    family: monospace #Cascadia Code PL #Ubuntu Mono #Input Mono
+    family: Iosevka #monospace #Cascadia Code PL #Ubuntu Mono #Input Mono
     style: Regular
-  size: 11.0
+  size: 12.0
 
 window:
   padding:
-   x: 10
-   y: 10
+   x: 7
+   y: 7
 
 schemes:
   gruvbox_material_medium_dark: &gruvbox_material_medium_dark

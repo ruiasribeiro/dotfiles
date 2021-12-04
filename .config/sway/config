@@ -5,6 +5,11 @@
 # Include colors from pywal.
 include "$HOME/.cache/wal/colors-sway"
 
+# Fix GTK+ applications taking 20 seconds to start
+exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK
+exec dbus-update-activation-environment 2>/dev/null && \
+     dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
+
 # Logo key. Use Mod1 for Alt.
 set $mod Mod4
 
@@ -197,7 +202,7 @@ include /etc/sway/config.d/*
 # Misc.:
 #
 default_border pixel 1
-font SF Pro Display 10
+font Roboto 10
 titlebar_border_thickness 0
 gaps inner 5
 smart_gaps on
@@ -245,3 +250,7 @@ client.focused $color1 $color1 $background $color1 $color1
 
 # Disable borders when there is only one open window
 hide_edge_borders smart_no_gaps
+
+# Start gnome-keyring-deamon
+exec eval $(gnome-keyring-daemon --start)
+exec export SSH_AUTH_SOCK
