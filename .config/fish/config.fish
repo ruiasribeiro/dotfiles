@@ -17,10 +17,15 @@ set -q GHCUP_INSTALL_BASE_PREFIX[1]; or set GHCUP_INSTALL_BASE_PREFIX $HOME ; se
 # <<< conda initialize <<<
 
 starship init fish | source
-fish_ssh_agent
+# fish_ssh_agent
 # source ~/.cache/wal/colors.fish
 
 set -gx JAVA_HOME /etc/alternatives/jre
 
 # set theme
-theme.sh ayu-mirage-simple-cursor
+# theme.sh ayu-mirage-simple-cursor
+
+# opam configuration
+source /home/ruir/.opam/opam-init/init.fish > /dev/null 2> /dev/null; or true
+
+zoxide init fish | source
