@@ -30,10 +30,9 @@ SETUVAR fish_color_selection:white\x1e\x2d\x2dbold\x1e\x2d\x2dbackground\x3dbrbl
 SETUVAR fish_color_status:red
 SETUVAR fish_color_user:brgreen
 SETUVAR fish_color_valid_path:\x2d\x2dunderline
-# SETUVAR fish_greeting:
 SETUVAR fish_key_bindings:fish_default_key_bindings
 SETUVAR fish_pager_color_completion:\x1d
 SETUVAR fish_pager_color_description:aa815d\x1eyellow
 SETUVAR fish_pager_color_prefix:white\x1e\x2d\x2dbold\x1e\x2d\x2dunderline
 SETUVAR fish_pager_color_progress:brwhite\x1e\x2d\x2dbackground\x3dcyan
-SETUVAR fish_user_paths:/home/ruir/\x2elocal/bin\x1e/home/ruir/\x2eghcup/bin\x1e/home/ruir/\x2ecabal/bin\x1e/home/ruir/\x2ebin\x1e/home/ruir/\x2ecargo/bin\x1e/usr/lib/jvm/java\x2d16\x2dopenjdk/bin\x1e/usr/lib/jvm/java\x2d8\x2dopenjdk/jre/bin\x1e/opt/android\x2dsdk/tools\x1e/opt/android\x2dsdk/tools/bin\x1e/opt/android\x2dsdk/platform\x2dtools\x1e/usr/lib/jvm/java\x2d16\x2dopenjdk
+SETUVAR fish_user_paths:/home/ruir/bin\x1e/home/ruir/\x2elocal/bin\x1e/home/ruir/\x2eghcup/bin\x1e/home/ruir/\x2ecabal/bin\x1e/home/ruir/\x2ebin\x1e/home/ruir/\x2ecargo/bin\x1e/usr/lib/jvm/java\x2d16\x2dopenjdk/bin\x1e/usr/lib/jvm/java\x2d8\x2dopenjdk/jre/bin\x1e/opt/android\x2dsdk/tools\x1e/opt/android\x2dsdk/tools/bin\x1e/opt/android\x2dsdk/platform\x2dtools\x1e/usr/lib/jvm/java\x2d16\x2dopenjdk
