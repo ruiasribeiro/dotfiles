@@ -16,3 +16,5 @@ starship init fish | source
 # source ~/.cache/wal/colors.fish
 
 set -gx JAVA_HOME /etc/alternatives/jre
+
+source ~/.asdf/asdf.fish

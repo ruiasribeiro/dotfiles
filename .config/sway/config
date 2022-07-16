@@ -260,3 +260,10 @@ exec eval $(gnome-keyring-daemon --start)
 exec export SSH_AUTH_SOCK
 
 exec lxpolkit
+
+exec "systemctl --user import-environment; systemctl --user start sway-session.target"
+
+# Start EasyEffects
+exec easyeffects --gapplication-service > dev/null 2>&1
+
+# exec systemctl --user set-environment _JAVA_AWT_WM_NONREPARENTING=1

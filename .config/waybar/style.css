@@ -6,7 +6,7 @@
     font-size: 13px;
     font-weight: 500;
     /* min-height: 24px; */
-    padding: 1px 1px;
+    padding: 2px 2px;
 }
 
 window#waybar {
@@ -24,6 +24,8 @@ window#waybar.hidden {
     background-color: transparent;
     color: #ffffff;
     border-radius: 6px;
+    padding-left: 16px;
+    padding-right: 16px;
 }
 
 /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
