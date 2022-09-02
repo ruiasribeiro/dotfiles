@@ -8,3 +8,6 @@ lxpolkit &
 
 # Start the NetworkManager applet.
 nm-applet &
+
+# Start Redshift (night colour adjuster).
+redshift -l 40:-10 &
