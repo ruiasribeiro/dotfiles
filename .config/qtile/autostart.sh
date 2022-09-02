@@ -5,3 +5,6 @@ picom &
 
 # Start the polkit authentication agent.
 lxpolkit &
+
+# Start the NetworkManager applet.
+nm-applet &

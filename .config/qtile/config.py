@@ -146,7 +146,7 @@ screens = [
                 add_space(spaces["left"]),
                 widget.CurrentLayoutIcon(scale=0.5),
                 add_space(spaces["left"]),
-                widget.GroupBox(disable_drag=True, hide_unused=True, highlight_method="block", padding_x=12, this_current_screen_border=colors["highlight"]),
+                widget.GroupBox(disable_drag=True, hide_unused=True, highlight_method="block", inactive=colors["foreground"], padding_x=12, this_current_screen_border=colors["highlight"]),
                 add_space(spaces["between"]),
                 widget.WindowName(font=fonts["title"], fontsize=14),
                 # Stretchable spacer
