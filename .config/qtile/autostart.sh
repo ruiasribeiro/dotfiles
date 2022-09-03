@@ -11,3 +11,6 @@ nm-applet &
 
 # Start Redshift (night colour adjuster).
 redshift -l 40:-10 &
+
+# Start the Bluetooth manager.
+blueman-applet &

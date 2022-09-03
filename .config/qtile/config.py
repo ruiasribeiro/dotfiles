@@ -21,7 +21,6 @@ colors = {
 
 fonts = {
     "main": "Inter Bold",
-    "icons": "JetBrainsMono Nerd Font",
     "title": "Inter",
 }
 
@@ -146,7 +145,7 @@ screens = [
                 add_space(spaces["left"]),
                 widget.CurrentLayoutIcon(scale=0.5),
                 add_space(spaces["left"]),
-                widget.GroupBox(disable_drag=True, hide_unused=True, highlight_method="block", inactive=colors["foreground"], padding_x=12, this_current_screen_border=colors["highlight"]),
+                widget.GroupBox(disable_drag=True, font=fonts["title"], hide_unused=True, highlight_method="block", inactive=colors["foreground"], padding_x=12, this_current_screen_border=colors["highlight"]),
                 add_space(spaces["between"]),
                 widget.WindowName(font=fonts["title"], fontsize=14),
                 # Stretchable spacer
@@ -154,13 +153,11 @@ screens = [
                 # Right side
                 widget.Systray(padding=16),
                 add_space(spaces["between"]),
-                widget.TextBox(fmt=" 蓼", font=fonts["icons"]),
+                widget.TextBox(fmt=" 蓼"),
                 widget.Volume(step=5),
                 add_space(spaces["between"]),
-                widget.Battery(font=fonts["icons"], format="{char}", show_short_text=False, charge_char="ﮣ", discharge_char="", empty_char="", full_char="ﮣ"),
-                widget.Battery(format="{percent:2.0%}", show_short_text=False),
+                widget.Battery(format=" {percent:2.0%}", show_short_text=True),
                 add_space(spaces["between"]),
-                widget.TextBox(fmt=" ", font=fonts["icons"]),
                 widget.Clock(format="%b %-d, %H:%M"),
                 add_space(spaces["right"]),
             ],
@@ -168,7 +165,7 @@ screens = [
             background=colors["base"],
             border_width=[0, 0, 1, 0],
         ),
-        wallpaper="/home/ruir/Pictures/Wallpapers/evening-sky.png",
+        wallpaper="/home/ruir/Pictures/Wallpapers/diamond-pattern.png",
         wallpaper_mode="fill",
     ),
 ]
