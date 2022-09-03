@@ -1,4 +1,0 @@
-font=Cantarell
-image=$(cat ~/.cache/wal/wal)
-
-indicator-idle-visible
