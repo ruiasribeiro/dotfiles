@@ -1,0 +1,17 @@
+import:
+  - ~/.config/alacritty/themes/catppuccin.yml
+
+cursor:
+  live_config_reload: true  
+
+font:
+  normal:
+    family: Iosevka
+    style: Regular
+  size: 8
+
+window:
+  dynamic_padding: true
+  padding:
+    x: 5
+    y: 5 
