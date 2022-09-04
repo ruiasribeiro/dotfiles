@@ -6,11 +6,13 @@ picom &
 # Start the polkit authentication agent.
 lxpolkit &
 
-# Start the NetworkManager applet.
-nm-applet &
-
 # Start Redshift (night colour adjuster).
 redshift -l 40:-10 &
 
-# Start the Bluetooth manager.
+# Start tray icons.
+nm-applet &
 blueman-applet &
+volumeicon &
+
+# Start gestures reader.
+libinput-gestures-setup start

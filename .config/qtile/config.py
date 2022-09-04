@@ -25,8 +25,8 @@ fonts = {
 }
 
 mod = "mod4"
-
 terminal = "alacritty"
+wallpaper = "/home/ruir/Pictures/Wallpapers/evening-sky.png"
 
 widget_defaults = {
     "font": fonts["main"],
@@ -54,6 +54,7 @@ keys = [
     Key([], "XF86AudioLowerVolume", lazy.spawn("pactl set-sink-volume @DEFAULT_SINK@ -5%"), desc="Lower volume"),
     # Misc
     Key([mod], "d", lazy.spawn("rofi -show drun"), desc="Open menu"),
+    Key([mod], "l", lazy.spawn("betterlockscreen -l"), desc="Lock screen"),
     Key([mod], "Return", lazy.spawn(terminal), desc="Open terminal"),
     Key([mod, "control"], "r", lazy.reload_config(), desc="Reload the config"),
     Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
@@ -86,17 +87,6 @@ keys = [
     Key([mod, "shift"], "Return", lazy.layout.toggle_split(), desc="Toggle between split and unsplit sides of stack"),
 ]
 
-mouse = [
-    Drag([mod], "Button1", lazy.window.set_position_floating(), start=lazy.window.get_position()),
-    Drag([mod], "Button3", lazy.window.set_size_floating(), start=lazy.window.get_size()),
-    Click([mod], "Button2", lazy.window.bring_to_front()),
-]
-
-
-#
-# Workspaces & layouts
-#
-
 groups = [Group(i) for i in "123456789"]
 for i in groups:
     keys.extend(
@@ -105,6 +95,17 @@ for i in groups:
             Key([mod, "shift"], i.name, lazy.window.togroup(i.name, switch_group=True), desc=f"Switch to & move focused window to group {i.name}"),
         ]
     )
+
+mouse = [
+    Drag([mod], "Button1", lazy.window.set_position_floating(), start=lazy.window.get_position()),
+    Drag([mod], "Button3", lazy.window.set_size_floating(), start=lazy.window.get_size()),
+    Click([mod], "Button2", lazy.window.bring_to_front()),
+]
+
+
+#
+# Layouts
+#
 
 layouts = [
     layout.Columns(
@@ -145,18 +146,24 @@ screens = [
                 add_space(spaces["left"]),
                 widget.CurrentLayoutIcon(scale=0.5),
                 add_space(spaces["left"]),
-                widget.GroupBox(disable_drag=True, font=fonts["title"], hide_unused=True, highlight_method="block", inactive=colors["foreground"], padding_x=12, this_current_screen_border=colors["highlight"]),
+                widget.GroupBox(
+                    disable_drag=True,
+                    fontsize=13,
+                    hide_unused=True,
+                    highlight_method="block",
+                    inactive=colors["foreground"],
+                    padding_x=12,
+                    padding_y=4,
+                    this_current_screen_border=colors["highlight"],
+                ),
                 add_space(spaces["between"]),
-                widget.WindowName(font=fonts["title"], fontsize=14),
+                widget.WindowName(font=fonts["title"], fontsize=13),
                 # Stretchable spacer
                 widget.Spacer(),
                 # Right side
                 widget.Systray(padding=16),
                 add_space(spaces["between"]),
-                widget.TextBox(fmt=" 蓼"),
-                widget.Volume(step=5),
-                add_space(spaces["between"]),
-                widget.Battery(format=" {percent:2.0%}", show_short_text=True),
+                widget.Battery(format="{char} {percent:2.0%}", show_short_text=True),
                 add_space(spaces["between"]),
                 widget.Clock(format="%b %-d, %H:%M"),
                 add_space(spaces["right"]),
@@ -165,7 +172,7 @@ screens = [
             background=colors["base"],
             border_width=[0, 0, 1, 0],
         ),
-        wallpaper="/home/ruir/Pictures/Wallpapers/diamond-pattern.png",
+        wallpaper=wallpaper,
         wallpaper_mode="fill",
     ),
 ]

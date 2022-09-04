@@ -19,7 +19,7 @@ timeout = 5
 [global]
 width = 450
 height = 100
-offset = 15x15
+offset = 15x50
 font = "Inter" 
 transparency = 10 
 padding = 5
