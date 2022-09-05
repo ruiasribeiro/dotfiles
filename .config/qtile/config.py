@@ -1,10 +1,10 @@
 import os
 import subprocess
 
-from libqtile import bar, hook, layout, widget
-from libqtile.config import Click, Drag, Group, Key, Match, Screen
+from libqtile import bar, hook, layout, qtile, widget
+from libqtile.backend.base import Window
+from libqtile.config import Click, Drag, Group, Key, Match
 from libqtile.lazy import lazy
-
 
 #
 # Helper vars
@@ -15,7 +15,7 @@ bar_height = 32
 colors = {
     "background": "#1f2024",
     "base": "#0f1012",
-    "foreground": "#cdd6f4",
+    "foreground": "#949cbb",
     "highlight": "#3d3f47",
 }
 
@@ -194,6 +194,8 @@ reconfigure_screens = True
 auto_minimize = True
 wmname = "LG3D"
 
+focus_on_window_activation = "urgent"
+
 
 #
 # Hooks
@@ -201,6 +203,20 @@ wmname = "LG3D"
 
 
 @hook.subscribe.startup_once
-def autostart():
+def autostart() -> None:
     home = os.path.expanduser("~/.config/qtile/autostart.sh")
     subprocess.Popen([home])
+
+
+# Inspired by: https://github.com/stefur/qtile-config#focus-browser-if-urgent
+@hook.subscribe.client_name_updated
+def focus_on_urgent(client: Window) -> None:
+    if (group := client.group) and client.urgent is True:
+        qtile.current_screen.set_group(group)
+        group.focus(client)
+
+
+@hook.subscribe.client_managed
+def focus_on_new_window(window: Window) -> None:
+    assert window.group is not None
+    window.group.cmd_toscreen()

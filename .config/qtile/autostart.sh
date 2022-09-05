@@ -12,7 +12,8 @@ redshift -l 40:-10 &
 # Start tray icons.
 nm-applet &
 blueman-applet &
-volumeicon &
+volctl &
+evolution &
 
 # Start gestures reader.
 libinput-gestures-setup start

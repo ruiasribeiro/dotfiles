@@ -34,6 +34,9 @@ sticky_history = yes
 show_indicators = no
 stack_duplicates = false
 
+dmenu = /usr/bin/rofi -dmenu dunst
+mouse_left_click = do_action,close_current
+
 [frame]
 color = "#636363"
 width = 2
