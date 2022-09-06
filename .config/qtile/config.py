@@ -3,8 +3,10 @@ import subprocess
 
 from libqtile import bar, hook, layout, qtile, widget
 from libqtile.backend.base import Window
-from libqtile.config import Click, Drag, Group, Key, Match
+from libqtile.config import Click, Drag, Group, Key, Match, Screen
 from libqtile.lazy import lazy
+
+from widgets.do_not_disturb import DoNotDisturb
 
 #
 # Helper vars
@@ -24,6 +26,7 @@ fonts = {
     "title": "Inter",
 }
 
+gaps = False
 mod = "mod4"
 terminal = "alacritty"
 wallpaper = "/home/ruir/Pictures/Wallpapers/evening-sky.png"
@@ -53,14 +56,15 @@ keys = [
     Key([], "XF86AudioRaiseVolume", lazy.spawn("pactl set-sink-volume @DEFAULT_SINK@ +5%"), desc="Raise volume"),
     Key([], "XF86AudioLowerVolume", lazy.spawn("pactl set-sink-volume @DEFAULT_SINK@ -5%"), desc="Lower volume"),
     # Misc
+    Key([], "Print", lazy.spawn("flameshot gui"), desc="Take a screenshot"),
     Key([mod], "d", lazy.spawn("rofi -show drun"), desc="Open menu"),
     Key([mod], "l", lazy.spawn("betterlockscreen -l"), desc="Lock screen"),
     Key([mod], "Return", lazy.spawn(terminal), desc="Open terminal"),
-    Key([mod, "control"], "r", lazy.reload_config(), desc="Reload the config"),
-    Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
     Key([mod], "w", lazy.window.kill(), desc="Kill focused window"),
     Key([mod], "f", lazy.window.toggle_fullscreen(), desc="Toggle fullscreen"),
     Key([mod], "Tab", lazy.next_layout(), desc="Toggle between layouts"),
+    Key([mod, "control"], "r", lazy.reload_config(), desc="Reload the config"),
+    Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
     # Switch between windows
     Key([mod], "Left", lazy.layout.left(), desc="Move focus to left"),
     Key([mod], "Right", lazy.layout.right(), desc="Move focus to right"),
@@ -113,11 +117,13 @@ layouts = [
         border_normal=colors["base"],
         border_width=1,
         insert_position=1,
+        margin=4 if gaps else 0,
     ),
     layout.Max(),
 ]
 
 floating_layout = layout.Floating(
+    border_focus=colors["foreground"],
     float_rules=[
         # Run the utility of `xprop` to see the wm class and name of an X client.
         *layout.Floating.default_float_rules,
@@ -127,7 +133,7 @@ floating_layout = layout.Floating(
         Match(wm_class="ssh-askpass"),  # ssh-askpass
         Match(title="branchdialog"),  # gitk
         Match(title="pinentry"),  # GPG key password entry
-    ]
+    ],
 )
 
 
@@ -163,6 +169,8 @@ screens = [
                 # Right side
                 widget.Systray(padding=16),
                 add_space(spaces["between"]),
+                DoNotDisturb(),
+                add_space(spaces["between"]),
                 widget.Battery(format="{char} {percent:2.0%}", show_short_text=True),
                 add_space(spaces["between"]),
                 widget.Clock(format="%b %-d, %H:%M"),
@@ -171,6 +179,7 @@ screens = [
             bar_height,
             background=colors["base"],
             border_width=[0, 0, 1, 0],
+            opacity=0.8 if gaps else 1,
         ),
         wallpaper=wallpaper,
         wallpaper_mode="fill",

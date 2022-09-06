@@ -10,9 +10,9 @@ configuration {
 
     display-drun: "   Apps ";
     display-run: "   Run ";
-    display-window: " 﩯  Window";
-    display-ssh: " SSH";
-    display-network: " 󰤨  Network";
+    display-window: " 﩯  Window ";
+    display-ssh: "   SSH ";
+    display-network: " 󰤨  Network ";
     
     sidebar-mode: true;
 }
