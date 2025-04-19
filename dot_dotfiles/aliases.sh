@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
 alias cm='chezmoi'
-alias cmup='cm git add . && cm git -- commit -m "update dotfiles" && cm git push'
+alias cmra='chezmoi re-add'
+alias cmup='chezmoi git add . && chezmoi git -- commit -m "update dotfiles" && chezmoi git push'
+
 alias redot='. $HOME/.bashrc'
