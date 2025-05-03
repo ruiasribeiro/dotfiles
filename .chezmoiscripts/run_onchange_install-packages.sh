@@ -6,7 +6,10 @@ set -o pipefail
 
 PACKAGES=(
     fzf
+    ncdu
     ranger
 )
 
-sudo apt install "${PACKAGES[@]}"
+sudo apt update
+sudo apt upgrade -y
+sudo apt install -y "${PACKAGES[@]}"
