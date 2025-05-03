@@ -3,7 +3,6 @@
 alias reload='. $HOME/.bashrc'
 
 alias cm='chezmoi'
-alias cmra='chezmoi re-add'
 alias cmup='chezmoi git add . && chezmoi git -- commit -m "update dotfiles" && chezmoi git push'
 
 # Delete all local branches (other than the primary ones). Other branches can
