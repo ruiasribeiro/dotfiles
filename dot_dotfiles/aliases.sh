@@ -7,9 +7,9 @@ alias cmup='chezmoi git add . && chezmoi git -- commit -m "update dotfiles" && c
 
 # Delete all local branches (other than the primary ones). Other branches can
 # also be ignored, if added to the `grep` expression.
-alias git_clean_local='git branch | grep -v -E "main|master|dev|develop" | xargs git branch -D'
+alias git-clean-local='git branch | grep -v -E "main|master|dev|develop" | xargs git branch -D'
 # Prune local tracking branches not on remote.
-alias git_prune_old='git remote prune origin'
+alias git-prune-old='git remote prune origin'
 
 # Use `ls` with sensible defaults.
 alias lls='LC_COLLATE="C" ls -hal --group-directories-first'
