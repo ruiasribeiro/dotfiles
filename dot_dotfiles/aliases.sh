@@ -12,6 +12,8 @@ alias git_clean_local='git branch | grep -v -E "main|master|dev|develop" | xargs
 # Prune local tracking branches not on remote.
 alias git_prune_old='git remote prune origin'
 
+# Use `ls` with sensible defaults.
 alias lls='LC_COLLATE="C" ls -hal --group-directories-first'
 
+# Change to the selected directory inside `ranger` when exiting.
 alias rcd='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
