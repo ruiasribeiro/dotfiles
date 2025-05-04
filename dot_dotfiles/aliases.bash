@@ -1,5 +1,3 @@
-#!/usr/bin/env bash
-
 alias reload='. $HOME/.bashrc'
 
 alias cm='chezmoi'

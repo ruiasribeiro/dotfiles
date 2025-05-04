@@ -22,4 +22,4 @@ which_port() {
     local port=$1
     netstat --all --program | grep "$port"
 }
-export -f exists
+export -f which_port
