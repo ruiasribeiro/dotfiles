@@ -1,7 +1,17 @@
 # dotfiles
+
 My personal dotfiles.
 
-This repository was set up based on [this tutorial](https://www.atlassian.com/git/tutorials/dotfiles).
+This repository was set up using [chezmoi](https://github.com/twpayne/chezmoi).
 
-![Current setup](current_setup.png)
+## Quick start
 
+```bash
+sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply ruiasribeiro
+```
+
+To update:
+
+```bash
+chezmoi update
+```
