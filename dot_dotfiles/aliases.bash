@@ -1,6 +1,8 @@
 alias reload='. $HOME/.bashrc'
 
 alias cm='chezmoi'
+alias cmap='chezmoi apply'
+alias cmed='code $(cm source-path)'
 alias cmup='chezmoi git add . && chezmoi git -- commit -m "update dotfiles" && chezmoi git push'
 
 # Delete all local branches (other than the primary ones). Other branches can
