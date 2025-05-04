@@ -11,3 +11,8 @@ export PATH="$PATH:$HOME/.cargo/bin"
 for init_script in "$BASE_DIR"/initialisation/*.bash; do
   . "$init_script"
 done
+
+# Enables real-time updates for Bash history (useful when multiple terminals are
+# open at the same time).
+shopt -s histappend
+PROMPT_COMMAND="history -a;$PROMPT_COMMAND"

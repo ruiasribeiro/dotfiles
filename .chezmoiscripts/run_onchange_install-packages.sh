@@ -5,9 +5,10 @@ set -o nounset
 set -o pipefail
 
 APT_PACKAGES=(
+    build-essential
+    cmake
     fzf
     ncdu
-    pipx
     ranger
     rustup
 )
@@ -20,7 +21,8 @@ sudo apt update
 sudo apt upgrade -y
 sudo apt install -y "${APT_PACKAGES[@]}"
 
-pipx ensurepath
 rustup toolchain install stable
-
 cargo install --locked "${CARGO_PACKAGES[@]}"
+
+cargo install --git https://github.com/astral-sh/uv uv
+uv python install 3.13
