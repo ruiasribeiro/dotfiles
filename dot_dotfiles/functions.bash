@@ -1,5 +1,3 @@
-#!/usr/bin/env bash
-
 # Check if a given program exists.
 exists() {
     if [[ $# -ne 1 ]]; then
