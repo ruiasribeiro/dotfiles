@@ -1,5 +1,3 @@
-alias reload='. $HOME/.bashrc'
-
 alias cm='chezmoi'
 alias cmap='chezmoi apply'
 alias cmed='code $(cm source-path)'
