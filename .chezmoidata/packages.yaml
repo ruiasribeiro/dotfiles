@@ -1,0 +1,14 @@
+packages:
+  general:
+    apt:
+    - 'build-essential'
+    - 'cmake'
+    - 'direnv'
+    - 'fzf'
+    - 'git'
+    - 'ncdu'
+    - 'ranger'
+  work:
+    apt:
+    - 'dotnet-sdk-9.0'
+    - 'libtbb-dev'

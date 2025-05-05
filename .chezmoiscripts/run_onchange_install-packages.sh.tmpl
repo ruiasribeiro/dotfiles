@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+set -o errexit
+set -o nounset
+set -o pipefail
+
+sudo apt update
+sudo apt upgrade -y
+sudo apt install -y {{ range .packages.general.apt -}} {{ . }} {{ end -}}
+
+{{- if eq .machine "work" }}
+sudo apt install -y {{ range .packages.work.apt -}} {{ . }} {{ end -}}
+{{- end }}

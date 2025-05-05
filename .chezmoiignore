@@ -1,1 +1,5 @@
 README.md
+
+{{- if ne .machine "work" }}
+dot_dotfiles/initialisation/ssh-agent.bash
+{{- end }}

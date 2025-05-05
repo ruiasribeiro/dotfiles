@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+set -o errexit
+set -o nounset
+set -o pipefail
+
+sudo apt update
+sudo apt upgrade -y
+sudo apt install -y rustup
+
+rustup toolchain install stable
+rustup update
