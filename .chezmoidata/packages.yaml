@@ -12,3 +12,9 @@ packages:
     apt:
     - 'dotnet-sdk-9.0'
     - 'libtbb-dev'
+    - 'postgresql-client-16'
+    - 'postgresql-client-common'
+    dotnet:
+    - 'csharpier'
+    - 'csharprepl'
+    - 'dotnet-ef'

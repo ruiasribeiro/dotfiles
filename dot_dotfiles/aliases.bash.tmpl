@@ -1,7 +1,9 @@
 alias cm='chezmoi'
 alias cmap='chezmoi apply'
 alias cmed='code $(cm source-path)'
+{{ if eq .machine "personal" }}
 alias cmup='chezmoi git add . && chezmoi git -- commit -m "update dotfiles" && chezmoi git push'
+{{ end }}
 
 # Delete all local branches (other than the primary ones). Other branches can
 # also be ignored, if added to the `grep` expression.
