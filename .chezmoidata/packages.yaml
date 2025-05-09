@@ -4,10 +4,13 @@ packages:
     - 'build-essential'
     - 'cmake'
     - 'direnv'
+    - 'dtrx'
     - 'fzf'
     - 'git'
     - 'ncdu'
     - 'ranger'
+    - 'zip'
+    python:
   work:
     apt:
     - 'dotnet-sdk-9.0'

@@ -1,7 +1,7 @@
 # Check if a given program exists.
 exists() {
-    if [[ $# -ne 1 ]]; then
-        echo 'Too many/few arguments, usage: exists <PROGRAM>' >&2
+    if [[ -z $1 ]]; then
+        echo 'Usage: exists <PROGRAM>' >&2
         return 1
     fi
 
@@ -12,8 +12,8 @@ export -f exists
 
 # Determine which program is currently using a given port.
 which_port() {
-    if [[ $# -ne 1 ]]; then
-        echo 'Too many/few arguments, usage: which_port <PORT>' >&2
+    if [[ -z $1 ]]; then
+        echo 'Usage: which_port <PORT>' >&2
         return 1
     fi
 
