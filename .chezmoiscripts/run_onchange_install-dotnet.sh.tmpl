@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+set -o errexit
+set -o nounset
+set -o pipefail
+
+{{ if eq .machine "work" }}
+sudo add-apt-repository -y ppa:dotnet/backports
+
+{{ range .packages.work.dotnet }}
+dotnet tool install -g {{ . }}
+{{ end }}
+{{ end }}

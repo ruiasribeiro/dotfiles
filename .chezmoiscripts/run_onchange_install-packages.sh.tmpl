@@ -9,10 +9,5 @@ sudo apt upgrade -y
 sudo apt install -y {{ range .packages.general.apt }} {{ . }} {{ end }}
 
 {{ if eq .machine "work" }}
-sudo add-apt-repository -y ppa:dotnet/backports
 sudo apt install -y {{ range .packages.work.apt }} {{ . }} {{ end }}
-
-{{ range .packages.work.dotnet }}
-dotnet tool install -g {{ . }}
-{{ end }}
 {{ end }}

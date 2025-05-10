@@ -10,7 +10,9 @@ packages:
     - 'ncdu'
     - 'ranger'
     - 'zip'
-    python:
+    cargo:
+    - 'navi'
+    pip:
   work:
     apt:
     - 'dotnet-sdk-9.0'
