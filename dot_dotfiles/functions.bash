@@ -18,6 +18,6 @@ which_port() {
     fi
 
     local port=$1
-    netstat --all --program | grep "$port"
+    netstat --all --numeric --program | grep "$port"
 }
 export -f which_port

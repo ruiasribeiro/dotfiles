@@ -11,3 +11,5 @@ sudo apt install -y {{ range .packages.general.apt }} {{ . }} {{ end }}
 {{ if eq .machine "work" }}
 sudo apt install -y {{ range .packages.work.apt }} {{ . }} {{ end }}
 {{ end }}
+
+sudo apt autoremove -y

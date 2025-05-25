@@ -1,6 +1,7 @@
 packages:
   general:
     apt:
+    - 'bat'
     - 'build-essential'
     - 'cmake'
     - 'direnv'
