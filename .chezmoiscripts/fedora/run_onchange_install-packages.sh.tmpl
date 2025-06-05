@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+set -o errexit
+set -o nounset
+set -o pipefail
+
+{{ if ne .chezmoi.osRelease.id "fedora" }}
+return
+{{ end }}
+
+sudo dnf --assumeyes upgrade
+sudo dnf --assumeyes install {{ range .packages.general.dnf }} {{ . }} {{ end }}
+sudo dnf --assumeyes autoremove
+

@@ -14,6 +14,17 @@ git_email = "..."
 machine = "personal" # or "work"
 ```
 
+To create the file in one go:
+
+```bash
+mkdir -p ~/.config/chezmoi
+cat > ~/.config/chezmoi/chezmoi.toml << 'EOF'
+[data]
+git_email = "..."
+machine = "personal" # or "work"
+EOF
+```
+
 To initialise `chezmoi` with a single command:
 
 ```bash

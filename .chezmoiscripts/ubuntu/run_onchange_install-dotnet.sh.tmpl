@@ -4,6 +4,10 @@ set -o errexit
 set -o nounset
 set -o pipefail
 
+{{ if ne .chezmoi.osRelease.id "ubuntu" }}
+return
+{{ end }}
+
 {{ if eq .machine "work" }}
 sudo add-apt-repository -y ppa:dotnet/backports
 

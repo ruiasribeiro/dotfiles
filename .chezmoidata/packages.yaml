@@ -13,6 +13,15 @@ packages:
     - 'zip'
     cargo:
     - 'navi'
+    dnf:
+    - 'bat'
+    - 'direnv'
+    - 'dtrx'
+    - 'fzf'
+    - 'git'
+    - 'ncdu'
+    - 'ranger'
+    - 'zip'
     pip:
   work:
     apt:

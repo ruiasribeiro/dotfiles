@@ -4,9 +4,12 @@ set -o errexit
 set -o nounset
 set -o pipefail
 
-sudo apt update
-sudo apt upgrade -y
-sudo apt install -y rustup
+{{ if ne .chezmoi.osRelease.id "fedora" }}
+return
+{{ end }}
+
+sudo dnf --assumeyes upgrade
+sudo dnf --assumeyes install rustup
 
 rustup toolchain install stable
 rustup update
