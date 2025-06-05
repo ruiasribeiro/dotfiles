@@ -5,13 +5,14 @@ set -o nounset
 set -o pipefail
 
 {{ if ne .chezmoi.osRelease.id "fedora" }}
-return
+exit
 {{ end }}
 
 sudo dnf --assumeyes upgrade
 sudo dnf --assumeyes install rustup
 
-rustup toolchain install stable
+rustup-init -y --no-modify-path
+source "$HOME/.cargo/env"
 rustup update
 
 cargo install --locked {{ range .packages.general.cargo }} {{ . }} {{ end }}

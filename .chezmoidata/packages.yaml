@@ -16,7 +16,6 @@ packages:
     dnf:
     - 'bat'
     - 'direnv'
-    - 'dtrx'
     - 'fzf'
     - 'git'
     - 'ncdu'
