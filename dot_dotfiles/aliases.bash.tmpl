@@ -1,11 +1,14 @@
 alias cm='chezmoi'
 alias cmap='chezmoi apply'
+alias cmclear='chezmoi state delete-bucket --bucket=entryState'
 alias cmed='code $(cm source-path)'
 {{ if eq .machine "personal" }}
 alias cmup='chezmoi git add . && chezmoi git -- commit -m "update dotfiles" && chezmoi git push'
 {{ end }}
 
+{{ if eq .chezmoi.osRelease.id "ubuntu" }}
 alias bat='batcat'
+{{ end }}
 
 # Delete all local branches (other than the primary ones). Other branches can
 # also be ignored, if added to the `grep` expression.
@@ -18,3 +21,9 @@ alias lls='LC_COLLATE="C" ls -l --almost-all --classify --group-directories-firs
 
 # Change to the selected directory inside `ranger` when exiting.
 alias rcd='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
+
+{{ if eq .chezmoi.osRelease.id "fedora" }}
+alias upup='sudo dnf upgrade'
+{{ else if eq .chezmoi.osRelease.id "ubuntu" }}
+alias upup='sudo apt update && sudo apt upgrade'
+{{ end }}

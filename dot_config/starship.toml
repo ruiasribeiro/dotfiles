@@ -1,0 +1,10 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+[character]
+success_symbol = "[>](bold green)"
+error_symbol = "[>](bold red)"
+
+[status]
+disabled = false
+format = '[\($common_meaning$signal_name$maybe_int\)]($style)'
+map_symbol = true

@@ -1,7 +1,20 @@
+# Use difftastic with a pager.
+diffp() {
+    if [[ $# -ne 2 ]]; then
+        echo 'Usage: diffp FILA_A FILE_B' >&2
+        return 1
+    fi
+
+    local file_a=$1
+    local file_b=$2
+
+    difft --color always "$file_a" "$file_b" | less -R
+}
+
 # Check if a given program exists.
 exists() {
     if [[ -z $1 ]]; then
-        echo 'Usage: exists <PROGRAM>' >&2
+        echo 'Usage: exists PROGRAM' >&2
         return 1
     fi
 
@@ -22,7 +35,7 @@ export -f rebuild_nvidia_open
 # Determine which program is currently using a given port.
 which_port() {
     if [[ -z $1 ]]; then
-        echo 'Usage: which_port <PORT>' >&2
+        echo 'Usage: which_port PORT' >&2
         return 1
     fi
 

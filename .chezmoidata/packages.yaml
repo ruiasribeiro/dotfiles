@@ -8,18 +8,24 @@ packages:
     - 'dtrx'
     - 'fzf'
     - 'git'
+    - 'htop'
     - 'ncdu'
     - 'ranger'
+    - 'ripgrep'
     - 'zip'
     cargo:
+    - 'difftastic'
     - 'navi'
     dnf:
     - 'bat'
     - 'direnv'
     - 'fzf'
+    - 'g++'
+    - 'gcc'
     - 'git'
     - 'ncdu'
     - 'ranger'
+    - 'ripgrep'
     - 'zip'
     pip:
   work:
