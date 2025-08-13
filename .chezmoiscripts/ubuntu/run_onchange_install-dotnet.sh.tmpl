@@ -11,6 +11,10 @@ exit
 {{ if eq .machine "work" }}
 sudo add-apt-repository -y ppa:dotnet/backports
 
+sudo apt update 
+sudo apt upgrade -y
+sudo apt install -y dotnet-sdk-9.0
+
 {{ range .packages.work.dotnet }}
 dotnet tool install -g {{ . }}
 {{ end }}
